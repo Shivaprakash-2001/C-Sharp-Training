@@ -1,0 +1,12 @@
+using System;
+
+class HelloWorld {
+    static void Main() {
+        string[] names = {"Shiva", "Ramu", "Hari haran"};
+        Console.WriteLine("Hello World");
+        
+        foreach (var name in names) {
+            Console.WriteLine(name);
+        }
+    }
+}
