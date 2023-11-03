@@ -1,0 +1,41 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Declaring a nullable integer
+        int? age = null;
+
+        // Checking if the age is known
+        if (age.HasValue)
+        {
+            Console.WriteLine("The person's age is: " + age.Value);
+        }
+        else
+        {
+            Console.WriteLine("The age is not available.");
+        }
+
+        // Assigning a value to the nullable integer
+      
+       age = 30;
+
+        // Re-checking if the age is known
+        if (age.HasValue)
+        {
+            Console.WriteLine("The person's age is: " + age.Value);
+        }
+        else
+        {
+            Console.WriteLine("The age is not available.");
+        }
+
+        // Using the null-coalescing operator
+        int result = age ?? 100;
+
+        Console.WriteLine("Result: " + result);
+
+        
+    }
+}
