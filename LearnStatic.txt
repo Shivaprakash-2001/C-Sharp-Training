@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearnStatic
+{
+    class Car
+    {
+        String Carname;
+         public static int numberofcars;
+        public void race(String carname)
+        {
+          
+
+            this.Carname = carname;
+            Console.WriteLine(carname +" Has joined the race");
+
+            Console.WriteLine( "Current Position -" +numberofcars);
+            numberofcars++;
+            
+            
+           
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Car car1 = new Car();
+            Car car2 = new Car();
+            Car car3 = new Car();
+            Car car4 = new Car();
+            Car car5 = new Car();
+            Car car6 = new Car();
+
+            Console.WriteLine("Race will Start in few seconds!");
+            car1.race("Lamborghini");
+            car2.race("Bugatti veyron");
+            car3.race("Ferrari");
+            car4.race("Cobra");
+            car5.race("Red Bull");
+            car6.race("Porsche");
+            
+
+            Console.WriteLine("Total number of cars joined "+Car.numberofcars);
+            Console.WriteLine("Race has been started!");
+            Console.ReadLine();
+        }
+    }
+}
