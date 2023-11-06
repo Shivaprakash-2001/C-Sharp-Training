@@ -1,0 +1,17 @@
+using System;
+
+interface shiva {
+    void one();
+}
+
+public class two : shiva {
+    public void one() {
+        Console.WriteLine("in two");
+    }
+}
+
+class HelloWorld {
+    static void Main() {
+        Console.WriteLine("Hello World");
+        two obj = new two();
+        obj.one();

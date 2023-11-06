@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearnException
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double result = 0; // Initialize result outside try block
+
+            try
+            {
+                Console.WriteLine("Enter first number:");
+                double num1 = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter Second number:");
+                double num2 = int.Parse(Console.ReadLine());
+
+                result = num1 / num2;
+                Console.WriteLine("Result: " + result);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Both try and catch has been executed sucessfully.");
+                Console.ReadLine(); // This line was moved inside the finally block
+            }
+        }
+    }
+}

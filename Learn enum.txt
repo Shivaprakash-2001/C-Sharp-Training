@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearnEnum
+{
+    enum CarCompany
+    {
+        Skoda =1, 
+        Hyundai ,
+        Mahindra,
+        LandRover,
+        MercedesBenz,
+        MG,
+        Lamborghini,
+        Audi,
+        Volkswagen
+
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            Console.WriteLine((int)CarCompany.Volkswagen);
+            Console.WriteLine(CarCompany.MercedesBenz);
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
