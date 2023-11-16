@@ -1,0 +1,35 @@
+
+using System;
+using System.Collections.Generic;
+class HelloWorld
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello World");
+
+        List<String> food = new List<String>();
+
+
+        food.Add("Maggi");
+        food.Add("Pasta");
+        food.Add("Dosa");
+        food.Add("Idly");
+        food.Add("Chapathi");
+        food.Add("upma");
+
+
+        food.Insert(0, "Pongal");
+       // food.Union(food);
+        Console.WriteLine(food.Count);
+        
+
+        foreach (string item in food)
+        {
+            Console.WriteLine(item);
+
+        }
+
+        Console.ReadLine();
+
+    }
+}

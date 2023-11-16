@@ -1,0 +1,53 @@
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace LearnDelegates
+{
+
+    class Ldelegates
+    {
+
+        delegate int twomethods(int a, int b);
+
+        public static int add(int a, int b)
+        {
+            Console.WriteLine("In method add");
+            return a + b;
+        }
+
+        public static int sub(int a, int b)
+        {
+
+            Console.WriteLine("In method sub");
+            return a - b;
+        }
+
+        class main
+        {
+            static void Main(string[] args)
+            {
+
+                //typr safe 
+                //treat methods like object 
+                //delegates will be used in events , in call-back methods 
+                Console.WriteLine("Learning delegates");
+
+
+
+                Ldelegates obj = new Ldelegates();
+                twomethods one = new twomethods(add);
+                int yes = one.Invoke(7, 3);
+
+
+                int two =one(6, 8);
+
+
+
+                Console.WriteLine(yes);
+                Console.WriteLine(two);
+
+
+            }
+        }
+    }
+}

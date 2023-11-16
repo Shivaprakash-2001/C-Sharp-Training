@@ -1,0 +1,65 @@
+using System;
+
+namespace generic
+{
+    class learn<T>
+    {
+        public  void Glearn(T a , T b ) {
+
+            if (a.Equals(b))
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+        }
+    }
+
+    public class GenerateList<T>
+    {
+        public void Tmethod<T>(T message)
+        {
+            Console.WriteLine(message);
+        }
+
+    }
+    class main
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("In class Learn : ");
+            learn <int> intobj = new   learn<int>();
+            learn<string> strobj = new learn<string>();
+            learn<double> floatobj = new learn<double>();
+
+
+            intobj.Glearn(1, 2);
+            strobj.Glearn("Shiva", "Shiva");
+            floatobj.Glearn(34.79, 34.789);
+
+
+
+           List<int> list = new List<int>(); 
+           // to achive type safety as it allows only integer
+           //code reusability
+           //improve better performance 
+           //microsoft suggest to use generic insted of collections
+           //boxing and unboxing does not occur (Performance increase)
+            list.Add(1);                     
+            list.Add(2);    
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
+            foreach (int i in list)
+            {
+                Console.WriteLine(i);
+            }
+
+GenerateList<String> generateList = new GenerateList<string>();
+            generateList.Tmethod<string>("Generic method!");
+            Console.ReadLine();
+        }
+    }
+}

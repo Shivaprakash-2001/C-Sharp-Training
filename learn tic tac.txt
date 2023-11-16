@@ -1,0 +1,76 @@
+using System;
+
+class TicTacToeA
+{
+    static int[][] check = new int[][] { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }, new int[] { 7, 8, 9 },
+                                        new int[] { 1, 4, 7 }, new int[] { 2, 5, 8 }, new int[] { 3, 6, 9 },
+                                        new int[] { 1, 5, 9 }, new int[] { 3, 5, 7 } };
+
+    static void ClearScreen()
+    {
+        Console.Clear();
+    }
+
+    static bool CheckGame(char[] board, char a)
+    {
+        foreach (int[] arr in check)
+        {
+            if ((board[arr[0] - 1] + board[arr[1] - 1] + board[arr[2] - 1]) == (a + a + a))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static void Main(string[] args)
+    {
+        char[] board = new char[] { '_', '_', '_', '_', '_', '_', ' ', ' ', ' ' };
+        int input = 0;
+        bool user1 = true;
+
+        while (true)
+        {
+            int index = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(board[index] + (j == 2 ? "" : "|"));
+                    index++;
+                }
+                Console.WriteLine();
+            }
+
+            Console.Write("\n" + (user1 ? "User 1 : " : "User 2 : "));
+            input = int.Parse(Console.ReadLine()) - 1;
+
+            if (input < 0 || input > 8 || board[input] == 'X' || board[input] == 'O')
+            {
+                ClearScreen();
+                continue;
+            }
+
+            board[input] = user1 ? 'X' : 'O';
+
+            if (CheckGame(board, user1 ? 'X' : 'O'))
+            {
+                ClearScreen();
+                Console.WriteLine(user1 ? "User 1 won the game" : "User 2 won the game");
+                break;
+            }
+
+            string str = new string(board);
+
+            if (!str.Contains(" ") && !str.Contains("_"))
+            {
+                ClearScreen();
+                Console.WriteLine("Game ended no one wins");
+                break;
+            }
+
+            user1 = !user1;
+            ClearScreen();
+        }
+    }
+}

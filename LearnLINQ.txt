@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Sample data - a list of strings
+        List<string> names = new List<string> { "Alwin", "Barbie", "Charu", "David", "Evil" };
+
+        // LINQ Query to get names starting with 'A'
+        var aNames = from name in names
+                     where name.StartsWith("A")
+                     select name;
+
+        // Display the result
+        Console.WriteLine("Names starting with 'A':");
+        foreach (var name in aNames)
+        {
+            Console.WriteLine(name);
+        }
+    }
+}
