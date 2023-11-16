@@ -1,0 +1,40 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            Console.WriteLine("Enter a number:");
+            int number = int.Parse(Console.ReadLine());
+
+            int result = DivideByTwo(number);
+            Console.WriteLine($"Result of dividing by 2: {result}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+        finally
+        {
+            Console.WriteLine("This block will always execute.");
+        }
+
+        Console.ReadLine();  
+    }
+
+    static int DivideByTwo(int number)
+    {
+        if (number == 0)
+        {
+            throw new Exception("Cannot divide by zero.");
+        }
+
+        return number / 2;
+    }
+}

@@ -1,0 +1,52 @@
+using System;
+
+class Vehicle
+{
+    public virtual void Start()
+    {
+        Console.WriteLine("Vehicle is starting...");
+    }
+}
+
+// Derived class 1
+class Car : Vehicle
+{
+    public override void Start()
+    {
+        Console.WriteLine("Car is starting...");
+    }
+}
+
+// Derived class 2
+class Motorcycle : Vehicle
+{
+    public override void Start()
+    {
+        Console.WriteLine("Motorcycle is starting...");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Creating objects
+        Vehicle vehicle = new Vehicle();
+        Car car = new Car();
+        Motorcycle motorcycle = new Motorcycle();
+
+        // Polymorphic behavior through method overriding
+        UseVehicle(vehicle);
+        UseVehicle(car);
+        UseVehicle(motorcycle);
+
+        Console.ReadLine(); 
+    }
+
+    // Method using polymorphism
+    static void UseVehicle(Vehicle vehicle)
+    {
+        // The correct Start method (either from Vehicle, Car, or Motorcycle) will be called dynamically
+        vehicle.Start();
+    }
+}

@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter your age:");
+        int age = int.Parse(Console.ReadLine());
+
+        if (age < 0)
+        {
+            Console.WriteLine("Invalid age. Please enter a non-negative number.");
+        }
+        else if (age < 18)
+        {
+            Console.WriteLine("You are a minor.");
+        }
+        else if (age < 65)
+        {
+            Console.WriteLine("You are an adult.");
+        }
+        else
+        {
+            Console.WriteLine("You are a senior citizen.");
+        }
+
+        Console.ReadLine(); 
+    }
+}

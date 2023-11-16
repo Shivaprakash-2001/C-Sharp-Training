@@ -1,0 +1,43 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter the number of wheels on a vehicle:");
+        int numberOfWheels = int.Parse(Console.ReadLine());
+
+        string vehicleType;
+
+        switch (numberOfWheels)
+        {
+
+            case 0:
+                vehicleType = "Yor are walking";
+                break;
+            case 2:
+                vehicleType = "Bicycle or Motorcycle";
+                break;
+
+             case 3: 
+                vehicleType = "You are riding in auto";
+                break;
+
+            case 4:
+                vehicleType = "Car";
+                break;
+
+            case 18:
+                vehicleType = "Truck";
+                break;
+
+            default:
+                vehicleType = "Unknown";
+                break;
+        }
+
+        Console.WriteLine($"A vehicle with {numberOfWheels} wheels is likely a {vehicleType}.");
+
+        Console.ReadLine(); 
+    }
+}
