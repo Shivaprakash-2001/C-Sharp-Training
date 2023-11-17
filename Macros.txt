@@ -1,0 +1,29 @@
+#define unity
+#undef rythmos
+#define LoyaltyMethods
+
+using System;
+
+class HelloWorld {
+    static void Main() {
+
+        // Console.WriteLine("Hello World");
+
+#if rythmos
+        Console.WriteLine(" Welcome to RYTHMOS ");
+
+#elif unity
+        Console.WriteLine(" UNITY Team !! ");
+
+#elif LoyaltyMethods
+        Console.WriteLine("Welcome to Loyalty Methods");
+
+#elif otherMacro
+        Console.WriteLine("This is another macro");
+
+#else
+        Console.WriteLine("No specific macro defined");
+
+#endif
+    }
+}
